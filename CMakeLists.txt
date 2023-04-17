@@ -2,6 +2,13 @@ cmake_minimum_required(VERSION 3.16.9)
 project(Mgdemo CXX)
 set(lib_name "MegatAnalyzer_Mgdemo")
 
+include(cmake/CPM.cmake)
+CPMAddPackage(
+  NAME Mgtest
+  GIT_TAG main
+  GITHUB_REPOSITORY ufan/Mgtest
+)
+
 find_package(ROOT COMPONENTS ROOTVecOps ROOTDataFrame REQUIRED)
 find_package(EDM4HEP REQUIRED)
 find_package(k4megat REQUIRED)
